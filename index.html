@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style1.css">
+    <title>The Beauty of Cosmos</title>
+</head>
+<body>
+	<header >
+		<h1 >The Beauty of Cosmos</h1>
+	</header>
+	<nav>
+		<ul>
+			<li><a class="scroll" href="#about">About</a></li>
+			<li><a href="#gallery">Gallery</a></li>
+			<li><a href="#contact">Contact</a></li>
+		</ul>
+	</nav>
+	<main>
+		<section id="about">
+			<h2>All about the Beauty</h2>
+			<p>Your beauty never was scary,<br>
+                Oh, cosmic wonder, so extraordinary,<br>
+                In your vast and endless space,<br>
+                A beauty that time cannot erase.</p>
+                
+                <p> The galaxies dance and twirl,<br>
+                    In a cosmic waltz, a celestial swirl,<br>
+                    The stars, they sparkle and shine,<br>
+                    In a universe that's forever divine.</p>
+                
+                <p>From the swirling nebulae,<br>
+                    To the planets far away,<br>
+                    The beauty of the cosmos shines,<br>
+                    In a brilliance that's truly divine.</p>
+                
+                <p>Your beauty never was scary,<br>
+                    A sight so enchanting and so merry,<br>
+                    A universe that's filled with wonder,<br>
+                    In a never-ending cosmic thunder.</p>
+                
+                <p> So let us gaze upon the stars,<br>
+                    And bask in their glow from afar,<br>
+                    For in the beauty of the cosmos,<br>
+                    We find a light that forever glows.</p>
+		</section>
+		<section id="gallery">
+			<h2>Gallery</h2>
+			<div class="gallery">
+				<figure>
+					<img height="100px"src="images/img2.png" alt="Cosmos Image 2">
+					<figcaption>The Carian Nebula, located 7,500 light-years away from Earth.</figcaption>
+				</figure>
+				<figure>
+					<img height="100px" src="images/img3.png" alt="Cosmos Image 3">
+					<figcaption>The Helix Nebula, located in the Aquarius constellation.</figcaption>
+				</figure>
+				<figure>
+					<img height="100px" src="images/img1.png" alt="Cosmos Image 3">
+					<figcaption>Eagle Nebula (M16) - located about 7,000 light-years away from Earth.</figcaption>
+				</figure>
+				<figure>
+					<img height="100px"src="images/img4.png" alt="Cosmos Image 1">
+					<figcaption>The Orion Nebula, located in the Milky Way galaxy.</figcaption>
+				</figure>
+				<figure  class="hidden additional">
+					<img height="100px"src="images/img5.png" alt="Cosmos Image 1" >
+					<figcaption>The Crab Nebula is located about 6,500 light-years away from Earth.</figcaption>
+				</figure>
+				<figure class="hidden additional">
+					<img height="100px"src="images/img6.png" alt="Cosmos Image 1" >
+					<figcaption>The Ring Nebula is located about 2,300 light-years away from Earth.</figcaption>
+				</figure>
+            </div>
+            <button class="view-more-button" onclick="showAllImages()">View More</button>
+		<button class="view-less-button hidden" onclick="hideAdditionalImages()">View Less</button>	
+		</section>
+		<section id="contact">
+			<h2>Contact Us</h2>
+			<form action="https://script.google.com/macros/s/AKfycbwHS4G1ynYbHb5G1IdQmmaZ2dO0AtgdxznFXF4IWuChRz0JT2y1Cs6vWruiIeipl3MZbQ/exec" target="_blank" method="post">
+				<label for="name">Name:</label>
+				<input type="text" id="name" name="name" required><br><br>
+				<label for="email">Email:</label>
+				<input type="email" id="email" name="email" required><br><br>
+				<label for="message">Message:</label>
+				<textarea id="message" name="message" rows="5" required></textarea><br><br>
+				<input type="submit" value="Send">
+			</form>
+		</section>
+	</main>
+    <footer><p>All rights reserved to SUSHRUT MHETRAS.</p></footer>
+	<script>
+		function showAllImages() {
+    var hiddenImages = document.querySelectorAll('.hidden');
+    for (var i = 0; i < hiddenImages.length; i++) {
+        hiddenImages[i].classList.remove('hidden');
+    }
+    document.querySelector('.view-more-button').style.display = 'none';
+    document.querySelector('.view-less-button').style.display = 'block';
+
+}
+function hideAdditionalImages() {
+  var additionalImages = document.querySelectorAll('.additional');
+  for (var i = 0; i < additionalImages.length; i++) {
+    additionalImages[i].classList.add('hidden');
+  }
+  document.querySelector('.view-more-button').style.display = 'block';
+  document.querySelector('.view-less-button').style.display = 'none';
+}
+// Get all the anchor tags with the "scroll" class
+const scrollLinks = document.querySelectorAll('a.scroll');
+
+// Loop through each anchor tag and add a click event listener
+scrollLinks.forEach((link) => {
+  link.addEventListener('click', (event) => {
+    // Prevent the default anchor link behavior
+    event.preventDefault();
+
+    // Get the target element based on the anchor tag's "href" attribute
+    const target = document.querySelector(link.getAttribute('href'));
+
+    // Scroll to the target element smoothly
+    target.scrollIntoView({
+      behavior: 'smooth'
+    });
+  });
+});
+
+	</script>
+</body>
+</html>
